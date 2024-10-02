@@ -450,22 +450,22 @@ p {
 /* 7 contact */
 .contact {
    
-    padding: 2rem 0; /* Add padding for spacing */
+    padding: 2rem 0; 
 }
 
 .contact-section {
     background-color: white;
     max-width: 100%;
-   
+    border-radius: 20px;
     box-shadow: 0 5px 25px grey;
     width: 100%;
-    max-width: 900px; /* Ensure a max width */
-    padding: 2rem; /* Add padding inside the card */
+    max-width: 900px; 
+    padding: 2rem; 
 }
 
 @media (max-width: 768px) {
     .contact-section {
-        max-width: 100%; /* Full width on smaller screens */
+        max-width: 100%; 
     }
 }
 
@@ -483,7 +483,7 @@ p {
     line-height: 3rem;
     padding: 0 1.5625rem;
     border: 0.125rem solid var(--bg-white);
-    background: var(--primary-grey);
+    background:  #d2d2d5;
     font-weight: 400;
     border-radius: 0.3125rem;
     color: var(--text-white);
@@ -491,7 +491,7 @@ p {
 
 .form-control:focus {
     color: var(--text-black);
-    background-color: #c7c7d3;
+    background-color: #e0e0f1;
     border-color: var(--bg-white);
     outline: 0;
     box-shadow: none;

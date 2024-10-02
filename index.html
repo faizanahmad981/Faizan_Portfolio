@@ -103,7 +103,7 @@
                             <a class="nav-link" href="#services">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#technical-skills">Technical Skills</a>
+                            <a class="nav-link" href="#technical-skills"> Skills</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#portfolio">Projects</a>
@@ -533,19 +533,19 @@
                     <form>
                         <!-- Name Input -->
                         <div class="mb-3">
-                            <input type="text" class="form-control bg-gradient placeholder-white" placeholder="Name">
+                            <input type="text" class="form-control bg-gradient placeholder-white" id="from_name" placeholder="Name" required>
                         </div>
                         <!-- Email Input -->
                         <div class="mb-3">
-                            <input type="email" class="form-control bg-gradient placeholder-white" placeholder="Email">
+                            <input type="email" id="email_id" class="form-control bg-gradient placeholder-white" placeholder="Email" required>
                         </div>
                         <!-- Description Textarea -->
                         <div class="mb-3">
-                            <textarea class="form-control bg-gradient placeholder-white" rows="4" placeholder="Description"></textarea>
+                            <textarea id="message" class="form-control bg-gradient placeholder-white" rows="4" placeholder="Description" required></textarea>
                         </div>
                         <!-- Submit Button -->
                         <div class="d-grid ">
-                            <button type="submit" class="btn bg-gradient">Submit</button>
+                            <button type="submit" class="btn bg-gradient" onclick="sendmain()">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -905,12 +905,14 @@
             </div>
         </div>
     </div>
+  
     <!-- Bootstrap 5 JS CDN Links -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
 
     <!-- Custom Js Link -->
     <script src="./assets/js/index.js"></script>
+   
 </body>
 
 </html>
