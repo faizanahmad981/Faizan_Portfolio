@@ -419,6 +419,7 @@ p {
 
 .portfolio_wrapper .portfolio-img:hover .overlay {
   background: rgba(77, 87, 222, 0.5);
+  border-radius: 10px;
 }
 
 .portfolio-img .overlay i {
