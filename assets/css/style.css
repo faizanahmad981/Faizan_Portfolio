@@ -358,7 +358,8 @@ p {
 }
 
 .services_wrapper {
-  background: var(--gradient-banner-mesh);
+ 
+  background-color: #ffffff;
   width: 100%;
   padding: 0;
   margin: 0 auto;
@@ -385,7 +386,7 @@ p {
 
 /* 6 portfolio */
 .portfolio_wrapper {
-  background: var(--gradient-banner-mesh);
+  background-color: #ffffff;
 }
 .portfolio_wrapper .nav-link {
   font-size: 0.9375rem;
@@ -450,7 +451,8 @@ p {
 
 /* 7 contact */
 .contact {
-   
+   background: var(--gradient-banner-mesh);
+
     padding: 2rem 0; 
 }
 
@@ -712,6 +714,10 @@ p {
   color: #6c757d;
 }
 
+.education_wrapper{
+   background: var(--gradient-banner-mesh);
+}
+
 .education-item {
   background-color: #ffffff;
   padding: 15px;
@@ -756,9 +762,12 @@ p {
     transform: translateX(0);
   }
 }
-
+.technical-skills_wrapper{
+  background: var(--gradient-banner-mesh);
+  
+}
 .technical-skills_wrapper .skills-section {
-  background-color: #ffffff;
+  background-color: white;
   padding: 20px;
  
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
