@@ -130,7 +130,9 @@
                     <section id="intro">
                         <h2 id="typewriter" class="text-uppercase position-relative"></h2>
                         <h1 class="text-uppercase">Faizan Ahmed</h1>
-                        <h5 class="text-uppercase">SOFTWARE ENGINEER</h5>
+                        
+                        <h5 class="text-uppercase">SOFTWARE ENGINEER(<span id="typewriter-webdev"></span><span class="cursor">|</span>)</h5>
+                      
                     </section>
                     
                     <div class="mt-5">
@@ -1363,6 +1365,24 @@
 
     <!-- Custom Js Link -->
     <script src="./assets/js/index.js"></script>
+    <script>
+        function typeWriterEffect(elementId, text, speed = 200) {
+            let i = 0;
+            const element = document.getElementById(elementId);
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+    
+        typeWriterEffect("typewriter-webdev", "Web Developer", 200);
+    </script>
+    
+    
    
 </body>
 

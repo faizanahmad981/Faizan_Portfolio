@@ -448,7 +448,17 @@ p {
   top: 50%;
   left: 50%;
 }
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: rgb(238, 138, 24);
+  animation: blink 1s infinite;
+}
 
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 /* 7 contact */
 .contact {
    background: var(--gradient-banner-mesh);

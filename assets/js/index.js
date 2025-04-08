@@ -111,6 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    
+
     // Create an IntersectionObserver
     const observer = new IntersectionObserver(onIntersection, { threshold: 0.5 });
     observer.observe(section);
