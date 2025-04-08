@@ -882,7 +882,36 @@ p {
   border-radius: 15px;
   width: 80%;
   height: 80%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+  0% {
+    transform: scale(1.05) translateX(0);
+  }
+  25% {
+    transform: scale(1.05) translateX(-5px);
+  }
+  50% {
+    transform: scale(1.05) translateX(5px);
+  }
+  75% {
+    transform: scale(1.05) translateX(-5px);
+  }
+  100% {
+    transform: scale(1.05) translateX(0);
+  }
+}
+
+
 .image-gallery {
   background-color: red;
   width: 50%;
