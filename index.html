@@ -27,6 +27,159 @@
        });
     })();
  </script>
+
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".portfolio-item");
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add("show");
+          }, index * 150); // stagger delay
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  items.forEach(item => observer.observe(item));
+
+  /* Re-animate on tab switch */
+  const tabs = document.querySelectorAll('[data-bs-toggle="pill"]');
+  tabs.forEach(tab => {
+    tab.addEventListener("shown.bs.tab", () => {
+      document
+        .querySelectorAll(".portfolio-item")
+        .forEach(item => {
+          item.classList.remove("show");
+          observer.observe(item);
+        });
+    });
+  });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const footer = document.querySelector(".footer_wrapper");
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          footer.classList.add("visible");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  observer.observe(footer);
+});
+</script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const contactSection = document.querySelector(".contact-section");
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          contactSection.classList.add("visible");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  observer.observe(contactSection);
+});
+</script>
+
+
+
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const reveals = document.querySelectorAll(
+    ".reveal-left, .reveal-up, .reveal-flip"
+  );
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add("active");
+          }, index * 120);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  reveals.forEach((el) => observer.observe(el));
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const titleText = "Hello, I'm";
+  const roles = [
+    "Frontend Developer",
+    "React Engineer",
+    "Next.js Developer"
+  ];
+
+  let titleIndex = 0;
+  let roleIndex = 0;
+  let charIndex = 0;
+
+  const titleEl = document.getElementById("typewriter");
+  const roleEl = document.getElementById("typewriter-webdev");
+
+  function typeTitle() {
+    if (titleIndex < titleText.length) {
+      titleEl.textContent += titleText.charAt(titleIndex);
+      titleIndex++;
+      setTimeout(typeTitle, 80);
+    }
+  }
+
+  function typeRole() {
+    if (charIndex < roles[roleIndex].length) {
+      roleEl.textContent += roles[roleIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(typeRole, 90);
+    } else {
+      setTimeout(eraseRole, 1500);
+    }
+  }
+
+  function eraseRole() {
+    if (charIndex > 0) {
+      roleEl.textContent = roles[roleIndex].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(eraseRole, 60);
+    } else {
+      roleIndex = (roleIndex + 1) % roles.length;
+      setTimeout(typeRole, 400);
+    }
+  }
+
+  typeTitle();
+  typeRole();
+});
+</script>
+
+
    <style>
         .portfolio-img {
             position: relative;
@@ -123,7 +276,7 @@
     <!-- Navbar section exit -->
 
     <!-- Banner section -->
-    <section id="home" class="banner_wrapper">
+  <!--   <section id="home" class="banner_wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 order-lg-1 order-2 banner-content">
@@ -131,7 +284,8 @@
                         <h2 id="typewriter" class="text-uppercase position-relative"></h2>
                         <h1 class="text-uppercase">Faizan Ahmed</h1>
                         
-                        <h5 class="text-uppercase">SOFTWARE ENGINEER(<span id="typewriter-webdev"></span><span class="cursor">|</span>)</h5>
+                        <h5 class="text-uppercase">SOFTWARE ENGINEER(<span id="typewriter-webdev"></span>
+                            <span class="cursor">|</span>)</h5>
                       
                     </section>
                     
@@ -149,19 +303,63 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Banner section exit -->
+
+
+    <!-- Banner section -->
+<section id="home" class="banner_wrapper position-relative ">
+  
+  <!-- Animated background layer -->
+  <div class="hero-bg"></div>
+
+  <div class="container position-relative">
+    <div class="row align-items-center min-vh-100">
+      
+      <!-- TEXT CONTENT -->
+      <div class="col-lg-7 order-lg-1 order-2 banner-content">
+        
+         <section id="intro">
+                        <h2 id="typewriter" class="text-uppercase position-relative text-white"></h2>
+                        <h1 class="text-uppercase text-secondary-custom">Faizan Ahmed</h1>
+                        
+                        <h5 class="text-uppercase text-white">SOFTWARE ENGINEER(<span id="typewriter-webdev"></span><span class="cursor">|</span>)</h5>
+                      
+                    </section>
+
+         <div class="mt-5">
+                        <a class="main-btn primary-btn" href="mailto:khawajfaizan258@gmail.com">Contact</a>
+
+                        <a class="main-btn secondary-btn ms-4" target="_blank"
+                            href="https://www.linkedin.com/in/faizan-ahmed258/">Linkedin</a>
+                    </div>
+      </div>
+
+      <!-- IMAGE -->
+      <div class="col-lg-5 order-lg-2 order-1 text-center">
+        <div class="top-right-img">
+          <img src="./assets/images/home-right.webp"
+               class="img-fluid hero-img"
+               alt="Faizan Ahmed">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Banner section exit -->
+
 
     <!-- About section -->
     <section id="about" class="about_wrapper py-5">
         <div class="container mt-5 container-custom">
             <div class="row">
                 <div class="col-lg-5 mb-4 mb-lg-0">
-                    <img src="./assets/images/original-Pictur.jpeg" alt="Profile Image" class="profile-img">
+                    <img src="./assets/images/original-Pictur.jpeg" alt="Profile Image" class="profile-img reveal-left">
                 </div>
                 <div class="col-lg-7">
                     <div class="mb-4">
-                        <div class="skill-card" >
+                        <div class="skill-card flip-card reveal-flip" >
                             <h3>About me</h3>
                            <p>
                             I am a Software Engineer recently graduated from COMSATS University in January 2025. I enjoy building websites that are clean, responsive, and easy to use.
@@ -188,7 +386,7 @@ I enjoy transforming ideas into clean, reusable, and maintainable UI components 
                     <div class="mb-4">
                         <h4 class="text-center">Web Development</h4>
                         <div class="d-flex flex-wrap justify-content-center gap-3">
-                            <div class="single-skill-item">
+                            <div class="single-skill-item reveal-up">
                                 <img src="./assets/images/services-img/html.png" alt="HTML5">
                                 <span>HTML5</span>
                             </div>
@@ -197,19 +395,19 @@ I enjoy transforming ideas into clean, reusable, and maintainable UI components 
                                 <span>CSS3</span>
                             </div>
                           
-                            <div class="single-skill-item">
+                            <div class="single-skill-item reveal-up">
                                 <img src="./assets/images/services-img/physics.png" alt="React.js">
                                 <span>React.js</span>
                             </div>
-                            <div class="single-skill-item">
+                            <div class="single-skill-item reveal-up">
                                 <img src="./assets/images/services-img/nextjs-icon.svg" alt="React.js">
                                 <span>Next.js</span>
                             </div>
-                            <div class="single-skill-item">
+                            <div class="single-skill-item reveal-up">
                                 <img src="./assets/images/services-img/tailwind.png" alt="React.js">
                                 <span>Tailwind CSS</span>
                             </div>
-                            <div class="single-skill-item">
+                            <div class="single-skill-item reveal-up">
                                 <img src="./assets/images/services-img/bootstrap.png" alt="Bootstrap">
                                 <span>Bootstrap</span>
                             </div>
@@ -269,10 +467,6 @@ I enjoy transforming ideas into clean, reusable, and maintainable UI components 
             </div>
         </div>
     </section>
-    
-
-   
-   
     <!-- About section exit -->
 
    
@@ -288,7 +482,7 @@ I enjoy transforming ideas into clean, reusable, and maintainable UI components 
                         is in beast beginning signs open god you're gathering ithe</p>
                 </div>
                 <div class="col-lg-3 col-sm-6 mb-4">
-                    <div class="card rounded-0 border-0 text-center py-5 px-3">
+                    <div class="card service-card rounded-0 border-0 text-center py-5 px-3">
                         <div>
                             <img decoding="async" src="./assets/images/services-img/mouse.webp">
                         </div>
@@ -382,6 +576,7 @@ I enjoy transforming ideas into clean, reusable, and maintainable UI components 
     
     
     <!-- technical skills exit -->
+
     <!-- portfolio Section -->
     <section id="portfolio" class="portfolio_wrapper">
         <div class="container mt-5">
@@ -404,7 +599,7 @@ I enjoy transforming ideas into clean, reusable, and maintainable UI components 
                     <div class="tab-pane fade show active" id="pills-one" role="tabpanel" aria-labelledby="pills-one-tab">
                 <div class="row">
 
-                     <div class="col-lg-4 col-sm-6">
+                     <div class="col-lg-4 col-sm-6 portfolio-item">
                                 <div class="portfolio-img" data-bs-toggle="modal" data-bs-target="#project1Modal">
                                     <img decoding="async" src="./assets/images/portfolio/mockups/TruthKeep.png"
                                         class="img-fluid w-100">
@@ -414,7 +609,7 @@ I enjoy transforming ideas into clean, reusable, and maintainable UI components 
                                 <p>Live portfolio: <a href="https://www.truthkeep.ai/" target="_blank" class="mt-4">Checkout Web-App</a></p>
                     </div>
                     <!-- 2 -->
-                       <div class="col-lg-4 col-sm-6">
+                       <div class="col-lg-4 col-sm-6 portfolio-item">
                                 <div class="portfolio-img" data-bs-toggle="modal" data-bs-target="#project7Modal">
                                     <img decoding="async" src="./assets/images/portfolio/mockups/Seller-margin.png"
                                         class="img-fluid w-100">
@@ -427,7 +622,7 @@ I enjoy transforming ideas into clean, reusable, and maintainable UI components 
                                
                             </div>
                             <!-- 3 -->
-                               <div class="col-lg-4 col-sm-6">
+                               <div class="col-lg-4 col-sm-6 portfolio-item">
                                 <div class="portfolio-img" data-bs-toggle="modal" data-bs-target="#project3Modal">
                                     <img decoding="async" src="./assets/images/portfolio/mockups/RabbitHole.png"
                                         class="img-fluid w-100">
@@ -443,7 +638,7 @@ I enjoy transforming ideas into clean, reusable, and maintainable UI components 
                 </div>
                  <div class="row">
 
-                     <div class="col-lg-4 col-sm-6">
+                     <div class="col-lg-4 col-sm-6 portfolio-item">
                                 <div class="portfolio-img" data-bs-toggle="modal" data-bs-target="#project8Modal">
                                     <img decoding="async" src="./assets/images/portfolio/mockups/fitnessGym.png"
                                     alt="Fitness GYM"
@@ -456,7 +651,7 @@ I enjoy transforming ideas into clean, reusable, and maintainable UI components 
                                 </p>
                             </div>
                     <!-- 2 -->
-                       <div class="col-lg-4 col-sm-6">
+                       <div class="col-lg-4 col-sm-6 portfolio-item">
                                 <div class="portfolio-img" data-bs-toggle="modal" data-bs-target="#project9Modal">
                                     <img decoding="async" src="./assets/images/portfolio/mockups/LuminaXpert.png"
                                         class="img-fluid w-100">
@@ -469,7 +664,7 @@ I enjoy transforming ideas into clean, reusable, and maintainable UI components 
                                 </p>
                             </div>
                             <!-- 3 -->
-                               <div class="col-lg-4 col-sm-6">
+                               <div class="col-lg-4 col-sm-6 portfolio-item">
                                 <div class="portfolio-img" data-bs-toggle="modal" data-bs-target="#project2Modal">
                                     <img decoding="async" src="./assets/images/portfolio/mockups/joint-office-Detector.png"
                                         class="img-fluid w-100">
@@ -488,7 +683,7 @@ I enjoy transforming ideas into clean, reusable, and maintainable UI components 
                     <!-- Other Projects -->
                     <div class="tab-pane fade" id="pills-two" role="tabpanel" aria-labelledby="pills-two-tab">
                         <div class="row">
-                            <div class="col-lg-4 col-sm-6">
+                            <div class="col-lg-4 col-sm-6 portfolio-item">
                                 <div class="portfolio-img" data-bs-toggle="modal" data-bs-target="#project4Modal">
                                     <img decoding="async" src="./assets/images/portfolio/CNN-Image-Classification/cnn.png"
                                         class="img-fluid w-100">
@@ -498,7 +693,7 @@ I enjoy transforming ideas into clean, reusable, and maintainable UI components 
                                 <p>Portfolio</p>
                             </div>
 
-                             <div class="col-lg-4 col-sm-6">
+                             <div class="col-lg-4 col-sm-6 portfolio-item">
                                 <div class="portfolio-img" data-bs-toggle="modal" data-bs-target="#project6Modal">
                                     <img decoding="async" src="./assets/images/portfolio/EFamily/Instagram post - 1.png"
                                         class="img-fluid w-100">
@@ -508,7 +703,7 @@ I enjoy transforming ideas into clean, reusable, and maintainable UI components 
                                 <p>APP portfolio</p>
                             </div>
                            
-                            <div class="col-lg-4 col-sm-6">
+                            <div class="col-lg-4 col-sm-6 portfolio-item">
                                 <div class="portfolio-img" data-bs-toggle="modal" data-bs-target="#project10Modal">
                                     <img decoding="async" src="./assets/images/portfolio/foodi-website/Mockupitem.png"
                                         class="img-fluid w-100">
@@ -520,7 +715,7 @@ I enjoy transforming ideas into clean, reusable, and maintainable UI components 
                             
                                 </p>
                             </div>
-                            <div class="col-lg-4 col-sm-6">
+                            <div class="col-lg-4 col-sm-6 portfolio-item">
                                 <div class="portfolio-img" data-bs-toggle="modal" data-bs-target="#project11Modal">
                                     <img decoding="async" src="./assets/images/portfolio/realstate/Mockupitem.png"
                                         class="img-fluid w-100">
@@ -531,7 +726,7 @@ I enjoy transforming ideas into clean, reusable, and maintainable UI components 
                             
                                 </p>
                             </div>
-                            <div class="col-lg-4 col-sm-6">
+                            <div class="col-lg-4 col-sm-6 portfolio-item">
                                 <div class="portfolio-img" data-bs-toggle="modal" data-bs-target="#project12Modal">
                                     <img decoding="async" src="./assets/images/portfolio/nexcent/Mockupitem.png"
                                         class="img-fluid w-100">
@@ -719,6 +914,9 @@ I enjoy transforming ideas into clean, reusable, and maintainable UI components 
         </div> 
     </section>
     <!-- Footer section exit -->
+
+
+
 <!-- Modal for Project 1 with Carousel, Thumbnails, and Gallery -->
 <div class="modal fade" id="project1Modal" tabindex="-1" aria-labelledby="project1ModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
