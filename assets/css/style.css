@@ -160,7 +160,10 @@ section {
   color: var(--secondary-color);
   border-color: var(--secondary-color);
 }
-
+.bullets-point-text{
+   color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
 .secondary-btn:hover {
   background: var(--gradient);
   color: #0a0f29;
@@ -1067,6 +1070,32 @@ border-bottom: 1px solid rgba(46, 255, 193, 0.25);
   }
 
   /* about */
+.about-points {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-points li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+/* Custom bullet */
+.about-points li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+}
+
+
+
   .client-info > div {
     justify-content: center;
   }
@@ -1361,12 +1390,10 @@ font-weight: bold;
 }
 
 .profile-img {
- display: flex;
   border-radius: 18px;
-  width: 80%;
-  height: 90%;
+  width: 90%;
+  height: auto; /* better than fixed 70% for responsiveness */
   cursor: pointer;
-
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
 }
