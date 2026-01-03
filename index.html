@@ -28,6 +28,63 @@
     })();
  </script>
 
+<script>
+const blogDetails = {
+  1: {
+    title: "Scalable Dashboard with React & Next.js",
+    description: "Implemented server-side rendering with Next.js, optimized state management with Redux, integrated APIs using Axios and React Query, and created reusable components. This blog explains architecture, UI/UX choices, and performance improvements.",
+    images: ["./assets/images/blog/blog.webp"]
+  },
+  2: {
+    title: "Figma-to-Code Pixel-Perfect UI",
+    description: "Focused on building clean, maintainable components following modern frontend architecture patterns. Ensured responsiveness across devices and translated Figma designs to live interactive interfaces efficiently.",
+    images: ["./assets/images/blog/blog2.webp"]
+  },
+  3: {
+    title: "Form Validation & API Integration",
+    description: "Implemented reusable form components with validation using React Hook Form + Zod. Integrated APIs for dynamic data submission and retrieval, ensuring smooth UX and scalable solutions for production-ready web applications.",
+    images: ["./assets/images/blog/Entertainment.jpg"]
+  }
+};
+
+function openModal(id) {
+  const modal = document.getElementById('blogModal');
+  const modalBody = document.getElementById('modalBody');
+  const blog = blogDetails[id];
+
+  modalBody.innerHTML = `
+    <h2 class="font-bold text-xl mb-3">${blog.title}</h2>
+    ${blog.images.map(img => `<img src="${img}" alt="${blog.title}">`).join('')}
+    <p>${blog.description}</p>
+  `;
+  modal.style.display = 'block';
+}
+
+function closeModal() {
+  document.getElementById('blogModal').style.display = 'none';
+}
+
+// Close modal when clicking outside the content
+window.onclick = function(event) {
+  const modal = document.getElementById('blogModal');
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+};
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
  <script>
 document.addEventListener("DOMContentLoaded", () => {
   const items = document.querySelectorAll(".portfolio-item");
@@ -275,8 +332,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
     <!-- Navbar section exit -->
 
-  
-
 
     <!-- Banner section -->
 <section id="home" class="banner_wrapper position-relative ">
@@ -467,7 +522,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </section>
     <!-- About section exit -->
 
-   
 
     <!-- Services section -->
     <section id="services" class="services_wrapper">
@@ -791,61 +845,72 @@ document.addEventListener("DOMContentLoaded", () => {
     </section>
     <!--  education exit -->
 
+
+
     <!-- blog Section -->
-    <div class="container py-5"  id="blog">
-        <div class="row">
-            <div class="col-sm-12 text-center mb-5">
-                <h2>BLOG</h2>
-                <p>Is give may shall likeness made yielding spirit a itself togeth created after sea <br
-                        class="d-none d-lg-block">
-                    is in beast beginning signs open god you're gathering ithe</p>
-            </div>
-           
+<section class="container py-10" id="blog">
+  <div class="text-center mb-10">
+    <h2 class="text-3xl font-bold mb-2">PROJECT BLOGS</h2>
+    <p class="text-gray-500">
+      Explore my projects and technical blogs showcasing expertise in frontend development, modern tools, and real-world solutions.
+    </p>
+  </div>
 
+  <div class="row g-4">
 
-
-<!-- Creative Projects -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card blog-card">
-                    <img src="./assets/images/blog/blog.webp" class="card-img-top" alt="Creative Projects">
-                    <div class="card-body blog-card-body">
-                        <h5 class="card-title blog-card-title">Social life</h5>
-                        <p class="card-text blog-card-text">Document and share your DIY projects, including tutorials and creative ideas. Post about your photography projects, techniques, and favorite subjects.</p>
-                    </div>
-                
-                </div>
-            </div>
-            <!-- Food and Cooking -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card blog-card">
-                    <img src="./assets/images/blog/blog2.webp" class="card-img-top" alt="Food and Cooking">
-                    <div class="card-body blog-card-body">
-                        <h5 class="card-title blog-card-title">Food and Cooking</h5>
-                        <p class="card-text blog-card-text">Share your favorite recipes, cooking tips, and culinary experiments. Write about your experiences at local restaurants or cafes, including what you loved or didn’t.</p>
-                    </div>
-               
-                </div>
-            </div>
-            <!-- Entertainment and Media -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card blog-card">
-                    <img src="./assets/images/blog/Entertainment.jpg" class="card-img-top" alt="Entertainment and Media">
-                    <div class="card-body blog-card-body">
-                        <h5 class="card-title blog-card-title">Entertainment and Media</h5>
-                        <p class="card-text blog-card-text">Review the latest movies or TV shows and discuss your favorites from different genres. Share your favorite music playlists and explain why you love the songs.</p>
-                    </div>
-               
-                </div>
-            </div>
-
-
-
-            
-        </div>
+    <!-- Blog Card 1 -->
+   <div class="col-md-6 col-lg-4 d-flex">
+  <div class="blog-card" onclick="openModal(1)">
+    <img src="./assets/images/blog/blog.webp" alt="Scalable Dashboard" class="blog-img">
+    <div class="blog-card-body">
+      <h5 class="blog-card-title">Scalable Dashboard with React & Next.js</h5>
+      <p class="blog-card-text">Built a dynamic admin dashboard that handles real-time data efficiently.</p>
     </div>
-   <!--   -->
-    
+  </div>
+</div>
+
+
+    <!-- Blog Card 2 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="blog-card" onclick="openModal(2)">
+        <img src="./assets/images/blog/blog2.webp" alt="Figma to Code" class="blog-img">
+        <div class="blog-card-body">
+          <h5 class="blog-card-title">Figma-to-Code Pixel-Perfect UI</h5>
+          <p class="blog-card-text">
+            Converted complex Figma designs into responsive, reusable frontend components.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Card 3 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="blog-card" onclick="openModal(3)">
+        <img src="./assets/images/blog/Entertainment.jpg" alt="Form Validation" class="blog-img">
+        <div class="blog-card-body">
+          <h5 class="blog-card-title">Form Validation & API Integration</h5>
+          <p class="blog-card-text">
+            Built robust forms with React Hook Form and Zod, integrated APIs efficiently.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<div id="blogModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <div id="modalBody">
+      <!-- Details will be injected here dynamically -->
+    </div>
+  </div>
+</div>    
 <!-- blog Section exit -->
+
+<!-- contact section -->
 <section class="contact section" id="contact">
     <div class="container">
         <div class="row justify-content-center">
@@ -875,6 +940,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
     </div>
 </section>
+<!--  -->
 
       
     <!-- Footer section -->
