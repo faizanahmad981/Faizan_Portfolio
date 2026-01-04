@@ -30,54 +30,7 @@
     })();
  </script>
 
-<script>
-const blogDetails = {
-  1: {
-    title: "Scalable Dashboard with React & Next.js",
-    description: "Implemented server-side rendering with Next.js, optimized state management with Redux, integrated APIs using Axios and React Query, and created reusable components. This blog explains architecture, UI/UX choices, and performance improvements.",
-    images: ["./assets/images/blog/blog.webp"]
-  },
-  2: {
-    title: "Figma-to-Code Pixel-Perfect UI",
-    description: "Focused on building clean, maintainable components following modern frontend architecture patterns. Ensured responsiveness across devices and translated Figma designs to live interactive interfaces efficiently.",
-    images: ["./assets/images/blog/blog2.webp"]
-  },
-  3: {
-    title: "Form Validation & API Integration",
-    description: "Implemented reusable form components with validation using React Hook Form + Zod. Integrated APIs for dynamic data submission and retrieval, ensuring smooth UX and scalable solutions for production-ready web applications.",
-    images: ["./assets/images/blog/Entertainment.jpg"]
-  }
-};
 
-function openModal(id) {
-  const modal = document.getElementById('blogModal');
-  const modalBody = document.getElementById('modalBody');
-  const blog = blogDetails[id];
-
-  modalBody.innerHTML = `
-    <h2 class="font-bold text-xl mb-3">${blog.title}</h2>
-    ${blog.images.map(img => `<img src="${img}" alt="${blog.title}">`).join('')}
-    <p>${blog.description}</p>
-  `;
-  modal.style.display = 'block';
-}
-
-function closeModal() {
-  document.getElementById('blogModal').style.display = 'none';
-}
-
-// Close modal when clicking outside the content
-window.onclick = function(event) {
-  const modal = document.getElementById('blogModal');
-  if (event.target === modal) {
-    modal.style.display = "none";
-  }
-};
-
-
-
-
-</script>
 
  <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -348,7 +301,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </section>
 
          <div class="mt-5">
-                        <a class="main-btn primary-btn" href="mailto:khawajfaizan258@gmail.com">Contact</a>
+                        <a class="main-btn primary-btn" href="mailto:khawajfaizan258@gmail.com">Hire Me</a>
 
                         <a class="main-btn secondary-btn ms-4" target="_blank"
                             href="https://www.linkedin.com/in/faizan-ahmed258/">Linkedin</a>
@@ -383,22 +336,73 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="skill-card flip-card reveal-flip" >
                             <h3>About me</h3>
                           <div class="p-6 space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+    
     <p>
-      Hi! I’m <strong>Faizan Ahmed</strong>, a Software Engineer with <strong>1 year of hands-on experience</strong> building modern, responsive, and high-performing web applications. I specialize in converting Figma designs into <strong>pixel-perfect, production-ready websites</strong>.
-    </p>
+  Hi, I’m <strong>Faizan Ahmed</strong> — a <strong>Software Engineer</strong> with
+  <strong>1+ year of hands-on experience</strong> building
+  <strong>modern, responsive, and high-performance web applications</strong>.
+  I specialize in turning <strong>Figma designs into pixel-perfect,
+  production-ready interfaces</strong>.
+</p>
+
 
     <ul class="list-disc list-inside space-y-2">
-      <li><strong class="bullets-point-text">Frontend Development:</strong> <span class="font-semibold text-purple-500">React.js, Next.js, TypeScript</span> – creating clean, responsive, and maintainable code.</li>
-      <li><strong class="bullets-point-text">State Management & Data Handling:</strong> <span class="font-semibold text-purple-500">Redux, React Query, Axios, Fetch API</span> – building real-time, scalable, data-driven applications.</li>
-      <li><strong class="bullets-point-text">Forms & Validation:</strong> <span class="font-semibold text-purple-500">React Hook Form + Zod</span> – implementing robust and user-friendly forms.</li>
-      <li><strong class="bullets-point-text">UI/UX & Styling:</strong> <span class="font-semibold text-purple-500">Tailwind CSS & Bootstrap</span> – turning Figma designs into pixel-perfect code with smooth UI/UX.</li>
-      <li><strong class="bullets-point-text">Experience Highlights:</strong> Delivered dashboards, websites, and web apps with clean architecture and reusable components.</li>
-      <li><strong class="bullets-point-text">Collaboration & Workflow:</strong> Git/GitHub, version control, code reviews, and teamwork – ensuring high-quality production-ready applications.</li>
-    </ul>
+  <li>
+    <strong class="bullets-point-text">Frontend Development:</strong>
+    <span class="font-semibold text-purple-500">
+      React.js, Next.js, TypeScript
+    </span>
+    — built <strong>10+ reusable UI modules</strong> and scalable layouts.
+  </li>
 
-    <p class="mt-2">
-      I thrive on transforming ideas into <strong>interactive, high-performing digital experiences</strong> that delight users. Whether it’s a client project or team collaboration, I deliver <strong>impactful web solutions</strong>.
-    </p>
+  <li>
+    <strong class="bullets-point-text">State & Data Management:</strong>
+    <span class="font-semibold text-purple-500">
+      Redux, React Query, Axios
+    </span>
+    — handled <strong>real-time APIs</strong> and optimized data fetching to
+    <strong>reduce load times by ~30%</strong>.
+  </li>
+
+  <li>
+    <strong class="bullets-point-text">Forms & Validation:</strong>
+    <span class="font-semibold text-purple-500">
+      React Hook Form + Zod
+    </span>
+    — reduced form errors and improved UX with
+    <strong>robust client-side validation</strong>.
+  </li>
+
+  <li>
+    <strong class="bullets-point-text">UI/UX & Styling:</strong>
+    <span class="font-semibold text-purple-500">
+      Tailwind CSS, Bootstrap
+    </span>
+    — delivered <strong>pixel-perfect Figma-to-code</strong> implementations
+    across desktop and mobile.
+  </li>
+
+  <li>
+    <strong class="bullets-point-text">Project Delivery:</strong>
+    Successfully delivered <strong>multiple dashboards, websites, and web apps</strong>
+    with clean architecture and reusable components.
+  </li>
+
+  <li>
+    <strong class="bullets-point-text">Collaboration & Workflow:</strong>
+    Git/GitHub, version control, code reviews, and team collaboration —
+    ensuring <strong>production-ready, maintainable code</strong>.
+  </li>
+</ul>
+
+
+   <p class="mt-3">
+  I enjoy transforming ideas into
+  <strong>fast, interactive, and scalable digital experiences</strong>.
+  Whether working with a team or directly with clients, my focus is always on
+  <strong>clean code, performance, and real-world impact</strong>.
+</p>
+
   </div>
 
                     
@@ -854,7 +858,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <!-- Blog Card 1 -->
    <div class="col-md-6 col-lg-4 d-flex">
-  <div class="blog-card" onclick="openModal(1)">
+  <div class="blog-card" >
     <img src="./assets/images/blog/blog.webp" alt="Scalable Dashboard" class="blog-img">
     <div class="blog-card-body">
       <h5 class="blog-card-title">Scalable Dashboard with React & Next.js</h5>
@@ -866,7 +870,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <!-- Blog Card 2 -->
     <div class="col-md-6 col-lg-4">
-      <div class="blog-card" onclick="openModal(2)">
+      <div class="blog-card" >
         <img src="./assets/images/blog/blog2.webp" alt="Figma to Code" class="blog-img">
         <div class="blog-card-body">
           <h5 class="blog-card-title">Figma-to-Code Pixel-Perfect UI</h5>
@@ -879,7 +883,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <!-- Blog Card 3 -->
     <div class="col-md-6 col-lg-4">
-      <div class="blog-card" onclick="openModal(3)">
+      <div class="blog-card">
         <img src="./assets/images/blog/Entertainment.jpg" alt="Form Validation" class="blog-img">
         <div class="blog-card-body">
           <h5 class="blog-card-title">Form Validation & API Integration</h5>
@@ -894,14 +898,8 @@ document.addEventListener("DOMContentLoaded", () => {
 </section>
 
 
-<div id="blogModal" class="modal">
-  <div class="modal-content">
-    <span class="modal-close" onclick="closeModal()">&times;</span>
-    <div id="modalBody">
-      <!-- Details will be injected here dynamically -->
-    </div>
-  </div>
-</div>    
+
+
 <!-- blog Section exit -->
 
 <!-- contact section -->
@@ -981,7 +979,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="project1ModalLabel">Machine Learning Model</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <!-- Bootstrap Carousel -->
@@ -1049,7 +1047,9 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="project2ModalLabel">Joint OFFICE Detector</h5>
+                    
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
                 </div>
                 <div id="project2Carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1000">
                     <div class="carousel-inner">
@@ -1185,11 +1185,13 @@ Super admin can add new admin and he can remove admin as well <br>
                       
                         <!-- Add more carousel items as needed -->
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#project4Carousel" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#project4Carousel"
+ data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#project4Carousel" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#project4Carousel"
+ data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
