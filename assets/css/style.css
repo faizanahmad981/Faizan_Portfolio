@@ -1607,3 +1607,79 @@ background: var(--bg-gray);
 @keyframes blink {
   50% { opacity: 0; }
 }
+
+/*  chats */
+
+#ai-chat-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.chat-btn {
+  background: linear-gradient(135deg, #7b2ff7, #f107a3);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.chat-box {
+  width: 320px;
+  height: 420px;
+  background: #111;
+  color: #fff;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  padding: 10px;
+  background: #7b2ff7;
+  display: flex;
+  justify-content: space-between;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+.ai-msg {
+  background: #222;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.user-msg {
+  background: #7b2ff7;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  text-align: right;
+}
+
+.chat-input {
+  display: flex;
+  padding: 8px;
+}
+
+.chat-input input {
+  flex: 1;
+  border: none;
+  padding: 6px;
+}
+
+.chat-input button {
+  background: #f107a3;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+}

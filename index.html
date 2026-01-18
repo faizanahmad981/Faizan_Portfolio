@@ -280,6 +280,10 @@ document.addEventListener("DOMContentLoaded", () => {
     <!-- Navbar section exit -->
 
 
+    
+
+
+
     <!-- Banner section -->
 <section id="home" class="banner_wrapper position-relative ">
   
@@ -932,6 +936,32 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
     </div>
 </section>
+
+<!-- AI Chat Widget -->
+<div id="ai-chat-widget">
+  <button id="chat-toggle" class="chat-btn">
+    💬 Ask AI
+  </button>
+
+  <div id="chat-box" class="chat-box d-none">
+    <div class="chat-header">
+      <strong>Portfolio AI Assistant</strong>
+      <span id="close-chat">✖</span>
+    </div>
+
+    <div id="chat-messages" class="chat-messages">
+      <div class="ai-msg">
+        Hi 👋 I can explain Faizan’s projects, skills & experience.
+      </div>
+    </div>
+
+    <div class="chat-input">
+      <input type="text" id="user-input" placeholder="Ask about projects..." />
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+</div>
+
 <!--  -->
 
       
@@ -1634,6 +1664,9 @@ Super admin can add new admin and he can remove admin as well <br>
 
     <!-- Custom Js Link -->
     <script src="./assets/js/index.js"></script>
+  <script src="./assets/js/ai-chat.js"></script>
+
+
     <script>
         function typeWriterEffect(elementId, text, speed = 300) {
             let i = 0;
