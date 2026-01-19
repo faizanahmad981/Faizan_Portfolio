@@ -265,6 +265,30 @@ h5 {
  
   
 }
+/* Mobile Navbar Background */
+.navbar-collapse {
+   /* Purple → Blue gradient */
+    padding: 1rem;
+}
+
+/* Navbar links in mobile view */
+.navbar-collapse .nav-link {
+    color: white; /* Text color white for contrast */
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+}
+
+/* Hover effect for mobile links */
+.navbar-collapse .nav-link:hover {
+    color: rgb(255, 215, 0); /* Optional: gold/yellow highlight on hover */
+    background-color: rgba(255,255,255,0.1); /* slight overlay effect */
+    border-radius: 5px;
+}
+
+/* Make sure collapse stays on top */
+.navbar-collapse.collapse.show {
+    z-index: 9999;
+}
 
 .header_wrapper .navbar-brand img {
   max-width: 10rem;
@@ -1075,6 +1099,10 @@ border-bottom: 1px solid rgba(46, 255, 193, 0.25);
   #typewriter {
     font-size: 18px; /* Adjust font size */
   }
+  .navbar-collapse {
+   /* Purple → Blue gradient */ background: var(--bg-gray); 
+   
+}
 }
 @media (max-width: 991px) {
   /* 2 Navbar */
@@ -1082,6 +1110,10 @@ border-bottom: 1px solid rgba(46, 255, 193, 0.25);
   .header-scrolled {
     height: auto;
   }
+  .navbar-collapse {
+   /* Purple → Blue gradient */ background: var(--bg-gray); 
+    
+}
 
   .header_wrapper .navbar-collapse {
     margin-top: -0.125rem;
@@ -1089,7 +1121,7 @@ border-bottom: 1px solid rgba(46, 255, 193, 0.25);
 
   .header_wrapper .menu-navbar-nav {
     text-align: center;
-    background-color: var(--bg-white);
+  
     padding-bottom: 0.9375rem;
   }
 
@@ -1103,6 +1135,10 @@ border-bottom: 1px solid rgba(46, 255, 193, 0.25);
   section {
     padding: 5rem 0;
   }
+   .navbar-collapse {
+   /* Purple → Blue gradient */ background: var(--bg-gray); 
+    
+}
 
   h1 {
     font-size: 2.5rem;
