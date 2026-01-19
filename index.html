@@ -909,7 +909,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="col-12 col-md-8 d-flex justify-content-center">
                 <div class="contact-section">
                     <h1 class="text-center mb-4">Contact me</h1>
-                    <form>
+                    <form id="contact-form">
                         <!-- Name Input -->
                         <div class="mb-3">
                             <input type="text" class="form-control bg-gradient placeholder-white" id="from_name" placeholder="Name" required>
@@ -923,9 +923,10 @@ document.addEventListener("DOMContentLoaded", () => {
                             <textarea id="message" class="form-control bg-gradient placeholder-white" rows="4" placeholder="Description" required></textarea>
                         </div>
                         <!-- Submit Button -->
-                        <div class="d-grid ">
-                            <button type="submit" class="btn bg-gradient" onclick="sendmain()">Submit</button>
+                        <div class="d-grid">
+                            <button type="submit" id="submit-btn" class="btn bg-gradient">Submit</button>
                         </div>
+                        <p id="form-message"></p>
                     </form>
                 </div>
             </div>
@@ -1007,6 +1008,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
+
 <!-- Modal for Project 1 with Carousel, Thumbnails, and Gallery -->
 <div class="modal fade" id="project1Modal" tabindex="-1" aria-labelledby="project1ModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -1073,7 +1077,6 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
     </div>
 </div>
-
 
     <!-- Modal for Project 2 -->
     <div class="modal fade" id="project2Modal" tabindex="-1" aria-labelledby="project1ModalLabel" aria-hidden="true">
@@ -1661,7 +1664,45 @@ Super admin can add new admin and he can remove admin as well <br>
     </div>
    
    
-  
+  <!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+    // Initialize EmailJS with your public key
+    emailjs.init("jpN6fK64PFeBdBUZB");
+
+    const form = document.getElementById("contact-form");
+    const formMessage = document.getElementById("form-message");
+    const submitBtn = document.getElementById("submit-btn");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending...";
+
+        const templateParams = {
+            from_name: document.getElementById("from_name").value,
+            email_id: document.getElementById("email_id").value,
+            message: document.getElementById("message").value
+        };
+
+        emailjs.send("service_ovj4zzb", "template_6bvpefj", templateParams)
+            .then(function(response) {
+                formMessage.style.color = "green";
+                formMessage.textContent = "Message sent successfully!";
+                form.reset();
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Submit";
+            }, function(error) {
+                formMessage.style.color = "red";
+                formMessage.textContent = "Failed to send message. Try again.";
+                console.log("EmailJS Error:", error);
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Submit";
+            });
+    });
+</script>
     <!-- Bootstrap 5 JS CDN Links -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
@@ -1670,7 +1711,9 @@ Super admin can add new admin and he can remove admin as well <br>
     <script src="./assets/js/index.js"></script>
   <script src="./assets/js/ai-chat.js"></script>
 
+ 
 
+<!--  -->
     <script>
         function typeWriterEffect(elementId, text, speed = 300) {
             let i = 0;
