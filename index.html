@@ -919,6 +919,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="mb-3">
                             <input type="email" id="email_id" class="form-control bg-gradient placeholder-white" placeholder="Email" required>
                         </div>
+                         <div class="mb-3">
+                            <input type="text" id="subject_id" class="form-control bg-gradient placeholder-white" 
+                            placeholder="Subject" required>
+                        </div>
                         <!-- Description Textarea -->
                         <div class="mb-3">
                             <textarea id="message" class="form-control bg-gradient placeholder-white" rows="4" placeholder="Description" required></textarea>
@@ -1685,6 +1689,7 @@ Super admin can add new admin and he can remove admin as well <br>
         const templateParams = {
             from_name: document.getElementById("from_name").value,
             email_id: document.getElementById("email_id").value,
+            subject_id: document.getElementById("subject_id").value,
             message: document.getElementById("message").value
         };
 
